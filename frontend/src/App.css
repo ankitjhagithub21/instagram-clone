@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    font-family: "Rubik", sans-serif;
+}
+
+section{
+    background: rgb(107,77,200);
+background: linear-gradient(90deg, rgba(107,77,200,1) 0%, rgba(219,72,98,1) 50%, rgba(251,138,44,1) 100%);
+}
+
+.custom-shadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
