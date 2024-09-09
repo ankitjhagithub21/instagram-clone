@@ -3,6 +3,7 @@ import toast from "react-hot-toast"
 import {useDispatch} from "react-redux"
 import { setIsLoggedIn, setUser } from '../redux/slices/authSlice'
 import useFetchAuthUser from '../hooks/useFetchAuthUser'
+import Sidebar from '../components/Sidebar'
 const Home = () => {
   useFetchAuthUser()
   const dispatch = useDispatch()
@@ -27,12 +28,9 @@ const Home = () => {
     }
   }
   return (
-    <div className='container p-5 mx-auto flex justify-between items-center'>
-     <h1 className="text-2xl font-bold ">
-      Instagram
-    </h1>
-    <button className='bg-red-500 text-white rounded-lg px-4 py-2' onClick={handleLogout}>Logout</button>
-    </div>
+    <main className='h-screen w-full d-flex '>
+      <Sidebar handleLogout={handleLogout}/>
+    </main>
   )
 }
 
