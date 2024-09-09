@@ -8,6 +8,7 @@ import {useSelector} from "react-redux"
 import useFetchAuthUser from './hooks/useFetchAuthUser'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
+import NotFound from './pages/NotFound'
 const App = () => {
  useFetchAuthUser()
   const {isLoggedIn} = useSelector(state=>state.auth)
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/register" element={isLoggedIn ? <Home/> : <Register/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/reset-password/:token" element={<ResetPassword/>}/>
+        <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
   )
