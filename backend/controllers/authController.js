@@ -135,6 +135,7 @@ const logout = async(req,res) =>{
         res.cookie('token','',{
             httpOnly:true,
             secure:true,
+            sameSite:"none",
             maxAge:0
         }).status(200).json({
             success:true,

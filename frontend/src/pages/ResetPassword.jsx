@@ -11,7 +11,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!password===confirmPassword){
-      return toast.error("Password and confirm password does not match")
+      return toast.error("Password and confirm password does not match.")
     }
     const url = `${import.meta.env.VITE_SERVER_URL}/api/auth/reset-password/${token}`
     try {
