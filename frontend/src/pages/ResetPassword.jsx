@@ -4,11 +4,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
+  const [confirmPassword,setConfirmPassword] = useState('')
   const { token } = useParams();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!password===confirmPassword){
+      return toast.error("Password and confirm password does not match")
+    }
     const url = `${import.meta.env.VITE_SERVER_URL}/api/auth/reset-password/${token}`
     try {
       
@@ -43,6 +47,14 @@ const ResetPassword = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter new password"
+        className='border-2 rounded-lg p-2'
+        required
+      />
+       <input
+        type="password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        placeholder="Confirm password"
         className='border-2 rounded-lg p-2'
         required
       />
