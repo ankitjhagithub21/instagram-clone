@@ -4,6 +4,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const authRouter= require("./routes/authRoutes")
 const connectDb = require('./connection')
+const postRouter = require('./routes/postRoutes')
 const app = express()
 const port = process.env.PORT ||  3000
 
@@ -17,6 +18,7 @@ app.use(cors({
 app.use(cookieParser())
 
 app.use("/api/auth",authRouter)
+app.use("/api/posts",postRouter)
 
 
 app.get('/', (req, res) => {

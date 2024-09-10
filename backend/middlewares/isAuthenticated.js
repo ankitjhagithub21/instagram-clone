@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+
 const isAuthenticated = (req,res,next) =>{
     
     try{
