@@ -51,7 +51,7 @@ const Sidebar = ({handleLogout}) => {
                     })
                 }
             </div>
-            <div className='flex mt-20 p-3 rouned-lg gap-2' onClick={handleLogout}>
+            <div className='flex mt-20 p-3 rouned-lg gap-2 hover:bg-gray-200 cursor-pointer' onClick={handleLogout}>
                 <div className='text-2xl'>
                     <CiLogout />
                 </div>
