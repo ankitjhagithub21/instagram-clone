@@ -3,6 +3,9 @@
 body {
     font-family: "Rubik", sans-serif;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 
 section {
     background: rgb(107, 77, 200);
