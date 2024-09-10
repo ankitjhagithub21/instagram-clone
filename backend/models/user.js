@@ -21,6 +21,31 @@ const userSchema = new mongoose.Schema({
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date,
+    profileImg:{
+        type:String,
+        default:""
+    },
+    followers:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User",
+            default:[]
+        }
+    ],
+    following:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User",
+            default:[]
+        }
+    ],
+    posts:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Post",
+            default:[]
+        }
+    ]
 
 },{timestamps:true,versionKey:false})
 
